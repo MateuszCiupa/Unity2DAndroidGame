@@ -1,0 +1,39 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage{amsmath}
+
+\author{Mateusz Ciupa}
+\title{Specyfikacja funkcjonalna aplikacji mobilnej}
+
+\begin{document}
+
+\maketitle
+\date
+\tableofcontents
+
+\section{Opis ogólny}
+Gra \textit{All About Survival} jest grą 2D, posiadająca cechy gry: platformowej, logicznej oraz strategicznej. Jest to gra zręcznościowa polegająca na poruszaniu się bohatera po platformie, zbieraniu nagród i dodatków, pojedynkowaniu się z przeciwnikami, rozbudowie fortyfikacji oraz rekrutacji jednostek. 
+
+\subsection{Wstęp fabularny}
+Akcja gry zaczyna się w środku lasu pełnego zwierząt oraz nieprzyjaznych stworzeń, które wyłaniają się w ciągu nocy aby siać strach i zniszczenie. Głównym zadaniem bohatera gry jest przetrwać noc oraz zebrać siły w ciągu dnia.
+
+\subsection{Ogólny przebieg rozgrywki}
+
+Gra rozpoczyna się początkiem dnia, a główna postać pojawia się obok punktu kontrolnego, którym jest ognisko. Punkt kontrolny jest bardzo ważnym miejscem, ponieważ gra kończy się porażką, gdy wroga jednostka zdoła do niego dojść. Bohater zaczyna grę z prostym łukiem, którym może bronić ogniska oraz pozyskiwać surowce zabijając zwierzęta. W środku lasu można znaleźć wałęsających się ludzi, którym można przydzielić rolę budowniczego (jest odpowiedzialny za budowę fortyfikacji oraz wycinkę drzew) lub łucznika (jego głównym zadaniem jest obrona punktu kontrolnego oraz pozyskiwanie surowców zabijając zwierzęta). Po wycięciu odpowiedniej liczby drzew wokół punktu kontrolnego można rozkazać budowniczemu wybudować mur, a następnie wieżę strażniczą (jedna wieża strażnicza będzie wymagała co najmniej jednego zwerbowanego łucznika) bezpośrednio za nim. Wraz z wycinką kolejnych drzew obszar, który wyznaczają fortyfikacje, można poszerzać, stawiając kolejne bloki muru, co zwiększa szanse na przetrwanie nocy. W trakcie nocy pojawiają się stworzenia, które za wszelką cenę chcą osiągnąć punkt kontrolny (niszcząc wszystko na swojej drodze) i wraz z kolejnymi nocami ilość ich, z którą atakują, rośnie. 
+
+\section{Funkcjonalność}
+
+\subsection{Ogólna}
+Gra może być uruchomiona w jednym z trzech trybów:
+\begin{enumerate}
+\item Punkt kontrolny znajduje się na skraju mapy z lewej strony -- fortyfikacje mogą być poszerzane tylko od lewej do prawej.
+\item Punkt kontrolny znajduje się na skraju mapy z prawej strony -- fortyfikacje mogą być poszerzane tylko od prawej do lewej
+\end{enumerate}
+
+\subsection{Mechanika gry}
+
+\section{Zasady publikacji aplikacji w sklepie Google Play}
+
+\end{document}
