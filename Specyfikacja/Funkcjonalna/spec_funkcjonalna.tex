@@ -17,7 +17,7 @@
 Gra \textit{All About Survival} jest grą 2D, posiadająca cechy gry: platformowej, logicznej oraz strategicznej. Jest to gra zręcznościowa polegająca na poruszaniu się bohatera po platformie, zbieraniu nagród i dodatków, pojedynkowaniu się z przeciwnikami, rozbudowie fortyfikacji oraz rekrutacji jednostek. 
 
 \subsection{Wstęp fabularny}
-Akcja gry zaczyna się w środku lasu pełnego zwierząt oraz nieprzyjaznych stworzeń, które wyłaniają się w ciągu nocy aby siać strach i zniszczenie. Głównym zadaniem bohatera gry jest przetrwać noc oraz zebrać siły w ciągu dnia.
+Akcja gry zaczyna się w środku lasu pełnego zwierząt oraz nieprzyjaznych stworzeń, które wyłaniają się w ciągu nocy aby siać strach i zniszczenie. Głównym zadaniem bohatera gry jest przetrwać każdą kolejną noc oraz zbierać siły w ciągu dnia.
 
 \subsection{Ogólny przebieg rozgrywki}
 
@@ -26,14 +26,28 @@ Gra rozpoczyna się początkiem dnia, a główna postać pojawia się obok punkt
 \section{Funkcjonalność}
 
 \subsection{Ogólna}
-Gra może być uruchomiona w jednym z trzech trybów:
+W trakcie rozgrywki gracz może zapisać aktualny stan gry oraz powrócić do niego w dowolnym momencie. Ponadto, aplikacja umożliwia zapisywanie postępów dla trzech różnych gier (trzy miejsca w menu do rozpoczęcia gry) oraz gra może być uruchomiona w jednym z trzech trybów:
 \begin{enumerate}
-\item Punkt kontrolny znajduje się na skraju mapy z lewej strony -- fortyfikacje mogą być poszerzane tylko od lewej do prawej.
-\item Punkt kontrolny znajduje się na skraju mapy z prawej strony -- fortyfikacje mogą być poszerzane tylko od prawej do lewej
+\item Punkt kontrolny znajduje się na skraju mapy z lewej strony -- fortyfikacje mogą być poszerzane tylko od lewej do prawej strony.
+\item Punkt kontrolny znajduje się na skraju mapy z prawej strony -- fortyfikacje mogą być poszerzane tylko od prawej do lewej strony.
+\item Punkt kontrolny znajduje się w centrum mapy -- fortyfikacje mogą być poszerzane w obie strony (jest to najtrudniejszy tryb, gdyż ataki w ciągu nocy nadchodzą z obu stron).
 \end{enumerate}
 
 \subsection{Mechanika gry}
+\begin{enumerate}
+\item Najważniejszym elementem gry jest cykl dnia i nocy -- w trakcie dnia gracz będzie miał 4 minuty żeby przygotować się do nocy, która potrwa zaledwie 2 minuty.
+\item Jedynymi zasobami, które można pozyskać w grze są monety oraz drewno. Monety otrzymuje się z zabijania zwierząt (jedna moneta na jedno zwierzę), a drewno ze ścinania drzew (jedna jednostka drewna z jednego drzewa). Dodatkowo ścięcie drzewa kosztuje jedną monetę oraz w trakcie ścinania drzewa (co trwa 10 sekund) zwerbowany budowniczy jest niedostępny.
+\item Postać zaczyna grę z prostym łukiem oraz trzema monetami, aby pozyskać lepszą broń (zaawansowany łuk lub kuszę) bohater musi udać się w głąb lasu, gdzie może znaleźć skrzynie, w których jest szansa na znalezienie tych broni lub od 10 do 20 monet.
+\item W trakcie znalezienia w lesie wałęsającego się człowieka oraz po zbliżeniu się do niego na odpowiednią odległość, człowiek ten pobiegnie w stronę punktu kontrolnego. Po dotarciu do punktu kontrolnego można przydzielić mu profesję, co będzie kosztowało jedną monetę. W przypadku trybu gry, gdzie fortyfikacje są poszerzane w obie strony, przy werbowaniu łucznika należy określić stronę, do której będzie należał.
+\item Bazowe fortyfikacje kosztują jedną monetę (mur jak i wieża strażnicza). Fortyfikacje mogą być ulepszane trzykrotnie (pierwsze ulepszenie kosztuje 4 monety i 2 jednostki drewna oraz kolejne ulepszenia -- dwukrotną wartość kwoty wcześniejszego ulepszenia). W przypadku muru każde ulepszenie podwaja jego wcześniejszą wytrzymałość, a wieży strażniczej -- każde ulepszenie pozwala umieścić kolejnego zwerbowanego łucznika.
+\item W trakcie dnia łucznicy idą polować, a robotnicy kręcą się wokół punktu kontrolnego (o ile nie mają żadnego zadania do wykonania). Przy nastaniu nocy robotnicy, którzy wykonują pracę poza fortyfikacjami kierują się w stronę punktu kontrolnego (anulując przy tym swoją robotę), a łucznicy wracają za najbliższą warstwę fortyfikacji. W przypadku fortyfikacji wytrzymałość jest określna za pomocą ilości ataków ze strony przeciwników (dla podstawowego muru -- 20 ataków, a dla wieży strażniczej na każdym poziomie -- 10 ataków).
+W przypadku zniszczenia warstwy fortyfikacji następuje dokładnie ten sam schemat, co przy nastaniu nocy.
+\end{enumerate}
+
 
 \section{Zasady publikacji aplikacji w sklepie Google Play}
-
+\begin{enumerate}
+\item Po pierwsze należy uiścić jednorazową opłatę w wysokości 25\$ w celu założenia developerskiego konta Google Play.
+\item Przy tworzeniu aplikacji w Google Play Console należy podać nazwę aplikacji, krótki opis, pełny opis, kilka zrzutów ekranu z aplikacji, ikonę (Hi-res 512x512), grafikę, wybrać rodzaj aplikacji
+\end{enumerate}
 \end{document}
