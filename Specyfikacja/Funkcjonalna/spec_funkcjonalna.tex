@@ -41,13 +41,34 @@ W trakcie rozgrywki gracz może zapisać aktualny stan gry oraz powrócić do ni
 \item W trakcie znalezienia w lesie wałęsającego się człowieka oraz po zbliżeniu się do niego na odpowiednią odległość, człowiek ten pobiegnie w stronę punktu kontrolnego. Po dotarciu do punktu kontrolnego można przydzielić mu profesję, co będzie kosztowało jedną monetę. W przypadku trybu gry, gdzie fortyfikacje są poszerzane w obie strony, przy werbowaniu łucznika należy określić stronę, do której będzie należał.
 \item Bazowe fortyfikacje kosztują jedną monetę (mur jak i wieża strażnicza). Fortyfikacje mogą być ulepszane trzykrotnie (pierwsze ulepszenie kosztuje 4 monety i 2 jednostki drewna oraz kolejne ulepszenia -- dwukrotną wartość kwoty wcześniejszego ulepszenia). W przypadku muru każde ulepszenie podwaja jego wcześniejszą wytrzymałość, a wieży strażniczej -- każde ulepszenie pozwala umieścić kolejnego zwerbowanego łucznika.
 \item W trakcie dnia łucznicy idą polować, a robotnicy kręcą się wokół punktu kontrolnego (o ile nie mają żadnego zadania do wykonania). Przy nastaniu nocy robotnicy, którzy wykonują pracę poza fortyfikacjami kierują się w stronę punktu kontrolnego (anulując przy tym swoją robotę), a łucznicy wracają za najbliższą warstwę fortyfikacji. W przypadku fortyfikacji wytrzymałość jest określna za pomocą ilości ataków ze strony przeciwników (dla podstawowego muru -- 20 ataków, a dla wieży strażniczej na każdym poziomie -- 10 ataków).
-W przypadku zniszczenia warstwy fortyfikacji następuje dokładnie ten sam schemat, co przy nastaniu nocy.
+W przypadku zniszczenia warstwy fortyfikacji następuje dokładnie ten sam schemat z przemieszczeniem jednostek, co przy nastaniu nocy.
+\item W przypadku spotkania wrogiej jednostki ze zwerbowaną jednostką -- zwerbowana jednostka traci swoją profesję oraz kieruje się w stronę punktu kontrolnego, gdzie można nadać jej z powrotem jedną z dwóch profesji (co będzie również kosztowało jedną monetę). Ta sama zasada obowiązuje dla łuczników znajdujących się na wieży strażniczej w przypadku zniszczenia wieży strażniczej.
+\item Dowolny element fortyfikacji może zostać usunięty na życzenie gracza (co będzie kosztowało 5 sztuk monet dla każdego elementu fortyfikacji). W przypadku usunięcia wieży strażniczej łucznicy nie tracą swojej profesji.
+\item Zwierzęta będą się pojawiać tylko i wyłącznie w obszarze drzew, dlatego usuwanie ich spowoduje zwiększenie odległości, którą będą pokonywać łucznicy w trakcie dnia aby pozyskiwać monety z polowania.
 \end{enumerate}
 
 
-\section{Zasady publikacji aplikacji w sklepie Google Play}
+\section{Publikacja aplikacji w sklepie Google Play}
+W przypadku opublikowania aplikacji w sklepie Google Play należałoby wykonać następujące kroki:
 \begin{enumerate}
-\item Po pierwsze należy uiścić jednorazową opłatę w wysokości 25\$ w celu założenia developerskiego konta Google Play.
-\item Przy tworzeniu aplikacji w Google Play Console należy podać nazwę aplikacji, krótki opis, pełny opis, kilka zrzutów ekranu z aplikacji, ikonę (Hi-res 512x512), grafikę, wybrać rodzaj aplikacji
+\item Po pierwsze należy uiścić jednorazową opłatę w wysokości \textit{25\$} w celu założenia developerskiego konta Google Play.
+\item Przy tworzeniu aplikacji w Google Play Console (Wszystkie aplikacje $\rightarrow$ Utwórz aplikację) należy podać język domyślny, nazwę aplikacji, krótki opis, pełny opis, kilka zrzutów ekranu z aplikacji, ikonę w wysokiej rozdzielczości (\textit{512x512}), grafikę (\textit{JPEG} lub 24-bitowy \textit{PNG}, \textit{1024x500}). 
+\item Przy przesyłaniu aplikacji jej język domyślny jest ustawiany na angielski, lecz istnieje możliwość dodania przetłumaczonych informacji o aplikacji wraz ze zrzutami ekranu oraz innymi zasobami graficznymi w odpowiednim języku (Konsola Play $\rightarrow$ Wszystkie aplikacje $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Szczegóły aplikacji $\rightarrow$ Zarządzaj tłumaczeniami $\rightarrow$ Kup tłumaczenia lub Dodaj własne tłumaczenie).
+\item Następnym krokiem jest podanie typu oraz kategorii aplikacji (Konsola Play $\rightarrow$ Wszystkie aplikacje $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Kategoryzacja). W przypadku gry mobilnej wybór kategorii może być następujący$\colon$ \textsl{Akcja}, \textsl{Edukacyjne}, \textsl{Fabularne}, \textsl{Hazardowe}, \textsl{Karciane}, \textsl{Łamigówki}, \textsl{Muzyka}, \textsl{Planszowe}, \textsl{Przygodowe}, \textsl{Quizy}, \textsl{Rekreacyjne}, \textsl{Słowne}, \textsl{Sport}, \textsl{Strategie}, \textsl{Symulacyjne}, \textsl{Wyścigi}, \textsl{Zręcznościowe}.
+\item Kolejno należałoby zapewnić pomoc użytkownikom aplikacji. Zespół Google Play nie świadczy pomocy technicznej dotyczącej poszczególnych aplikacji, dlatego w przypadku każdej aplikacji jest wymagane$\colon$
+\begin{enumerate}
+\item Podać działający i dokładny adres e-mail, pod którym użytkownicy będą mogli się kontaktować z właścicielem aplikacji (Konsola Play $\rightarrow$ Wszystkie aplikacje $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Informacje kontaktowe).
+\item W rozsądnym czasie odpowiadać na pytania użytkowników dotyczące płatnych aplikacji i zakupów w aplikacji (w czasie trzech dni, a w przypadku pytań ze strony Google -- w czasie 24 godzin).
+\item Oferowanie zwrotów środków.
+\end{enumerate}
+\item Dodanie polityki prywatności na stronie \textit{Informacje o aplikacji} (Konsola Play $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Obecność w sklepie $\rightarrow$ Informacje o aplikacji $\rightarrow$ Polityka prywatności). Polityka prywatności (wraz z innymi objaśnieniami w aplikacji) musi wyraźnie informować o tym, w jaki sposób aplikacja zbiera, wykorzystuje i udostępnia dane użytkownika oraz komu są one udostępniane. W sekcji \textit{Polityka prywatności} należy wpisać URL, pod którym polityka prywatności jest przechowywana online.
+\item Kolejnymi krokami są$\colon$
+\begin{enumerate}
+\item Wypełnienie kwestionariusza oceny treści aplikacji.
+\item Publikowanie aplikacji, korzystając z publikowania standardowego lub zaplanowanego. Nowa aplikacja może mieć kilka stanów opublikowania$\colon$ \textsl{Wersja robocza}, \textsl{Gotowa do publikacji}, \textsl{Czeka na publikację}, \textsl{Opublikowana}, \textsl{Odrzucona}, \textsl{Zawieszona}.
+\item Optymalizacja strony z informacjami o aplikacji przy użyciu eksperymentów (przeprowadzanie testów A/B na stronie z informacjami o aplikacji).
+\item [Dodatkowo] Poznanie sprawdzonych metod tworzenia ciekawej strony z informacjami o aplikacji.
+\item [Dodatkowo] Możliwość dowiedzenia się, jak rozpowszechniać aplikację w różnych lokalizacjach oraz programach związanych z Androidem.
+\end{enumerate}
 \end{enumerate}
 \end{document}
