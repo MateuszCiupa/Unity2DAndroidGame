@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage[none]{hyphenat}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -184,7 +185,7 @@ na bliską odległość do zwierzęcia.
 Klasa dziedzicząca po klasie \texttt{Character} odwzorowująca nieprzyjazną
 istotę, której głównym zadaniem jest dostanie się do punktu kontrolnego.
 
-Zestaw metod%\colon%
+Zestaw metod$\colon$
 
 \begin{itemize}
 \item \texttt{public void AttackRight()}
@@ -200,5 +201,12 @@ akcje przy trafieniu w cel.
 \end{itemize}
 
 \end{enumerate}
+
+\section{Testy jednostkowe}
+
+Jako że językiem, którym się posługujemy do pisania skryptów jest \textit{C
+\#}, wykorzystamy wbudowaną usługę do przeprowadzania testów, którą oferuje 
+Microsoft, zwaną Unit Test Project. Testy jednostkowe będą przeprowadzone na 
+publicznych metodach każdej klasy.
 
 \end{document}

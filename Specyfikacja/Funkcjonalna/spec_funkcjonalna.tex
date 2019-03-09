@@ -1,80 +1,198 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
 \usepackage{lastpage}
-\usepackage{amsmath}
+\usepackage[none]{hyphenat}
 
-\author{Mateusz Ciupa}
-\title{Specyfikacja funkcjonalna aplikacji mobilnej}
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{\textit{All About Survival}}
+\lhead{Specyfikacja funkcjonalna}
+\cfoot{\thepage/\pageref{LastPage}}
+\setlength{\headheight}{15pt}
+
+\author{Mateusz Ciupa 291062}
+\title{Specyfikacja funkcjonalna gry mobilnej \\\textit{All About Survival}}
 
 \begin{document}
 
 \maketitle
-\date
 \tableofcontents
 
 \section{Opis ogólny}
-Gra \textit{All About Survival} jest grą 2D, posiadająca cechy gry: platformowej, logicznej oraz strategicznej. Jest to gra zręcznościowa polegająca na poruszaniu się bohatera po platformie, zbieraniu nagród i dodatków, pojedynkowaniu się z przeciwnikami, rozbudowie fortyfikacji oraz rekrutacji jednostek. 
+Gra \textit{All About Survival} jest grą 2D, posiadająca cechy gry: 
+platformowej, logicznej oraz strategicznej. Jest to gra zręcznościowa 
+polegająca na poruszaniu się bohatera po platformie, zbieraniu nagród i 
+dodatków, pojedynkowaniu się z przeciwnikami, rozbudowie fortyfikacji oraz 
+rekrutacji jednostek. 
 
 \subsection{Wstęp fabularny}
-Akcja gry zaczyna się w środku lasu pełnego zwierząt oraz nieprzyjaznych stworzeń, które wyłaniają się w ciągu nocy aby siać strach i zniszczenie. Głównym zadaniem bohatera gry jest przetrwać każdą kolejną noc oraz zbierać siły w ciągu dnia.
+Akcja gry zaczyna się w środku lasu pełnego zwierząt oraz nieprzyjaznych 
+stworzeń, które wyłaniają się w ciągu nocy aby siać strach i zniszczenie. 
+Głównym zadaniem bohatera gry jest przetrwać każdą kolejną noc oraz zbierać 
+siły w ciągu dnia.
 
 \subsection{Ogólny przebieg rozgrywki}
 
-Gra rozpoczyna się początkiem dnia, a główna postać pojawia się obok punktu kontrolnego, którym jest ognisko. Punkt kontrolny jest bardzo ważnym miejscem, ponieważ gra kończy się porażką, gdy wroga jednostka zdoła do niego dojść. Bohater zaczyna grę z prostym łukiem, którym może bronić ogniska oraz pozyskiwać surowce zabijając zwierzęta. W środku lasu można znaleźć wałęsających się ludzi, którym można przydzielić rolę budowniczego (jest odpowiedzialny za budowę fortyfikacji oraz wycinkę drzew) lub łucznika (jego głównym zadaniem jest obrona punktu kontrolnego oraz pozyskiwanie surowców zabijając zwierzęta). Po wycięciu odpowiedniej liczby drzew wokół punktu kontrolnego można rozkazać budowniczemu wybudować mur, a następnie wieżę strażniczą (jedna wieża strażnicza będzie wymagała co najmniej jednego zwerbowanego łucznika) bezpośrednio za nim. Wraz z wycinką kolejnych drzew obszar, który wyznaczają fortyfikacje, można poszerzać, stawiając kolejne bloki muru, co zwiększa szanse na przetrwanie nocy. W trakcie nocy pojawiają się stworzenia, które za wszelką cenę chcą osiągnąć punkt kontrolny (niszcząc wszystko na swojej drodze) i wraz z kolejnymi nocami ilość ich, z którą atakują, rośnie. 
+Gra rozpoczyna się początkiem dnia, a główna postać pojawia się obok punktu 
+kontrolnego, którym jest ognisko. Punkt kontrolny jest bardzo ważnym 
+miejscem, ponieważ gra kończy się porażką, gdy wroga jednostka zdoła do niego 
+dojść. Bohater zaczyna grę z prostym łukiem, którym może bronić ogniska oraz 
+pozyskiwać surowce zabijając zwierzęta. W środku lasu można znaleźć 
+wałęsających się ludzi, którym można przydzielić rolę budowniczego (jest 
+odpowiedzialny za budowę fortyfikacji oraz wycinkę drzew) lub łucznika (jego 
+głównym zadaniem jest obrona punktu kontrolnego oraz pozyskiwanie surowców 
+zabijając zwierzęta). Po wycięciu odpowiedniej liczby drzew wokół punktu 
+kontrolnego można rozkazać budowniczemu wybudować mur, a następnie wieżę 
+strażniczą (jedna wieża strażnicza będzie wymagała co najmniej jednego 
+zwerbowanego łucznika) bezpośrednio za nim. Wraz z wycinką kolejnych drzew 
+obszar, który wyznaczają fortyfikacje, można poszerzać, stawiając kolejne 
+bloki muru, co zwiększa szanse na przetrwanie nocy. W trakcie nocy pojawiają 
+się stworzenia, które za wszelką cenę chcą osiągnąć punkt kontrolny (niszcząc 
+wszystko na swojej drodze) i wraz z kolejnymi nocami ilość ich, z którą 
+atakują, rośnie. 
 
 \section{Funkcjonalność}
 
 \subsection{Ogólna}
-W trakcie rozgrywki gracz może zapisać aktualny stan gry oraz powrócić do niego w dowolnym momencie. Ponadto, aplikacja umożliwia zapisywanie postępów dla trzech różnych gier (trzy miejsca w menu do rozpoczęcia gry) oraz gra może być uruchomiona w jednym z trzech trybów:
+W trakcie rozgrywki gracz może zapisać aktualny stan gry oraz powrócić do 
+niego w dowolnym momencie. Ponadto, aplikacja umożliwia zapisywanie postępów 
+dla trzech różnych gier (trzy miejsca w menu do rozpoczęcia gry) oraz gra 
+może być uruchomiona w jednym z trzech trybów:
 \begin{enumerate}
-\item Punkt kontrolny znajduje się na skraju mapy z lewej strony -- fortyfikacje mogą być poszerzane tylko od lewej do prawej strony.
-\item Punkt kontrolny znajduje się na skraju mapy z prawej strony -- fortyfikacje mogą być poszerzane tylko od prawej do lewej strony.
-\item Punkt kontrolny znajduje się w centrum mapy -- fortyfikacje mogą być poszerzane w obie strony (jest to najtrudniejszy tryb, gdyż ataki w ciągu nocy nadchodzą z obu stron).
+\item Punkt kontrolny znajduje się na skraju mapy z lewej strony -- 
+fortyfikacje mogą być poszerzane tylko od lewej do prawej strony.
+\item Punkt kontrolny znajduje się na skraju mapy z prawej strony -- 
+fortyfikacje mogą być poszerzane tylko od prawej do lewej strony.
+\item Punkt kontrolny znajduje się w centrum mapy -- fortyfikacje mogą być 
+poszerzane w obie strony (jest to najtrudniejszy tryb, gdyż ataki w ciągu 
+nocy nadchodzą z obu stron).
 \end{enumerate}
 
 \subsection{Mechanika gry}
 \begin{enumerate}
-\item Najważniejszym elementem gry jest cykl dnia i nocy -- w trakcie dnia gracz będzie miał 4 minuty żeby przygotować się do nocy, która potrwa zaledwie 2 minuty.
-\item Jedynymi zasobami, które można pozyskać w grze są monety oraz drewno. Monety otrzymuje się z zabijania zwierząt (jedna moneta na jedno zwierzę), a drewno ze ścinania drzew (jedna jednostka drewna z jednego drzewa). Dodatkowo ścięcie drzewa kosztuje jedną monetę oraz w trakcie ścinania drzewa (co trwa 10 sekund) zwerbowany budowniczy jest niedostępny.
-\item Postać zaczyna grę z prostym łukiem oraz trzema monetami, aby pozyskać lepszą broń (zaawansowany łuk lub kuszę) bohater musi udać się w głąb lasu, gdzie może znaleźć skrzynie, w których jest szansa na znalezienie tych broni lub od 10 do 20 monet.
-\item W trakcie znalezienia w lesie wałęsającego się człowieka oraz po zbliżeniu się do niego na odpowiednią odległość, człowiek ten pobiegnie w stronę punktu kontrolnego. Po dotarciu do punktu kontrolnego można przydzielić mu profesję, co będzie kosztowało jedną monetę. W przypadku trybu gry, gdzie fortyfikacje są poszerzane w obie strony, przy werbowaniu łucznika należy określić stronę, do której będzie należał.
-\item Bazowe fortyfikacje kosztują jedną monetę (mur jak i wieża strażnicza). Fortyfikacje mogą być ulepszane trzykrotnie (pierwsze ulepszenie kosztuje 4 monety i 2 jednostki drewna oraz kolejne ulepszenia -- dwukrotną wartość kwoty wcześniejszego ulepszenia). W przypadku muru każde ulepszenie podwaja jego wcześniejszą wytrzymałość, a wieży strażniczej -- każde ulepszenie pozwala umieścić kolejnego zwerbowanego łucznika.
-\item W trakcie dnia łucznicy idą polować, a robotnicy kręcą się wokół punktu kontrolnego (o ile nie mają żadnego zadania do wykonania). Przy nastaniu nocy robotnicy, którzy wykonują pracę poza fortyfikacjami kierują się w stronę punktu kontrolnego (anulując przy tym swoją robotę), a łucznicy wracają za najbliższą warstwę fortyfikacji. W przypadku fortyfikacji wytrzymałość jest określna za pomocą ilości ataków ze strony przeciwników (dla podstawowego muru -- 20 ataków, a dla wieży strażniczej na każdym poziomie -- 10 ataków).
-W przypadku zniszczenia warstwy fortyfikacji następuje dokładnie ten sam schemat z przemieszczeniem jednostek, co przy nastaniu nocy.
-\item W przypadku spotkania wrogiej jednostki ze zwerbowaną jednostką -- zwerbowana jednostka traci swoją profesję oraz kieruje się w stronę punktu kontrolnego, gdzie można nadać jej z powrotem jedną z dwóch profesji (co będzie również kosztowało jedną monetę). Ta sama zasada obowiązuje dla łuczników znajdujących się na wieży strażniczej w przypadku zniszczenia wieży strażniczej.
-\item Dowolny element fortyfikacji może zostać usunięty na życzenie gracza (co będzie kosztowało 5 sztuk monet dla każdego elementu fortyfikacji). W przypadku usunięcia wieży strażniczej łucznicy nie tracą swojej profesji.
-\item Zwierzęta będą się pojawiać tylko i wyłącznie w obszarze drzew, dlatego usuwanie ich spowoduje zwiększenie odległości, którą będą pokonywać łucznicy w trakcie dnia aby pozyskiwać monety z polowania.
+\item Najważniejszym elementem gry jest cykl dnia i nocy -- w trakcie dnia 
+gracz będzie miał 4 minuty żeby przygotować się do nocy, która potrwa 
+zaledwie 2 minuty.
+\item Jedynymi zasobami, które można pozyskać w grze są monety oraz drewno. 
+Monety otrzymuje się z zabijania zwierząt (jedna moneta na jedno zwierzę), a 
+drewno ze ścinania drzew (jedna jednostka drewna z jednego drzewa). Dodatkowo 
+ścięcie drzewa kosztuje jedną monetę oraz w trakcie ścinania drzewa (co trwa 
+10 sekund) zwerbowany budowniczy jest niedostępny.
+\item Postać zaczyna grę z prostym łukiem oraz trzema monetami, aby pozyskać 
+lepszą broń (zaawansowany łuk lub kuszę) bohater musi udać się w głąb lasu, 
+gdzie może znaleźć skrzynie, w których jest szansa na znalezienie tych broni 
+lub od 10 do 20 monet.
+\item W trakcie znalezienia w lesie wałęsającego się człowieka oraz po 
+zbliżeniu się do niego na odpowiednią odległość, człowiek ten pobiegnie w 
+stronę punktu kontrolnego. Po dotarciu do punktu kontrolnego można 
+przydzielić mu profesję, co będzie kosztowało jedną monetę. W przypadku trybu 
+gry, gdzie fortyfikacje są poszerzane w obie strony, przy werbowaniu łucznika 
+należy określić stronę, do której będzie należał.
+\item Bazowe fortyfikacje kosztują jedną monetę (mur jak i wieża strażnicza). 
+Fortyfikacje mogą być ulepszane trzykrotnie (pierwsze ulepszenie kosztuje 4 
+monety i 2 jednostki drewna oraz kolejne ulepszenia -- dwukrotną wartość 
+kwoty wcześniejszego ulepszenia). W przypadku muru każde ulepszenie podwaja 
+jego wcześniejszą wytrzymałość, a wieży strażniczej -- każde ulepszenie 
+pozwala umieścić kolejnego zwerbowanego łucznika.
+\item W trakcie dnia łucznicy idą polować, a robotnicy kręcą się wokół punktu 
+kontrolnego (o ile nie mają żadnego zadania do wykonania). Przy nastaniu nocy 
+robotnicy, którzy wykonują pracę poza fortyfikacjami kierują się w stronę 
+punktu kontrolnego (anulując przy tym swoją robotę), a łucznicy wracają za 
+najbliższą warstwę fortyfikacji. W przypadku fortyfikacji wytrzymałość jest 
+określna za pomocą ilości ataków ze strony przeciwników (dla podstawowego 
+muru -- 20 ataków, a dla wieży strażniczej na każdym poziomie -- 10 ataków).
+W przypadku zniszczenia warstwy fortyfikacji następuje dokładnie ten sam 
+schemat z przemieszczeniem jednostek, co przy nastaniu nocy.
+\item W przypadku spotkania wrogiej jednostki ze zwerbowaną jednostką -- 
+zwerbowana jednostka traci swoją profesję oraz kieruje się w stronę punktu 
+kontrolnego, gdzie można nadać jej z powrotem jedną z dwóch profesji (co 
+będzie również kosztowało jedną monetę). Ta sama zasada obowiązuje dla 
+łuczników znajdujących się na wieży strażniczej w przypadku zniszczenia wieży 
+strażniczej.
+\item Dowolny element fortyfikacji może zostać usunięty na życzenie gracza 
+(co będzie kosztowało 5 sztuk monet dla każdego elementu fortyfikacji). W 
+przypadku usunięcia wieży strażniczej łucznicy nie tracą swojej profesji.
+\item Zwierzęta będą się pojawiać tylko i wyłącznie w obszarze drzew, dlatego 
+usuwanie ich spowoduje zwiększenie odległości, którą będą pokonywać łucznicy 
+w trakcie dnia aby pozyskiwać monety z polowania.
 \end{enumerate}
 
 \section{Testy akceptacyjne}
 \begin{itemize}
-\item Aplikacja zawiera wszystkie funkcjonalności zawarte w specyfikacji funkcjonalnej.
-\item Aplikacja bez problemu obsługuje mechanizm zapisywania oraz wczytywania gry dla każdej z trzech rozpoczętych gier oraz dla każdego trybu gry.
-\item W trakcie działania gry nie zostanie wykonana akcja niezdefiniowana w specyfikacji funkcjonalnej (nagłe zatrzymanie aplikacji lub błędne działanie aplikacji).
+\item Aplikacja zawiera wszystkie funkcjonalności zawarte w specyfikacji 
+funkcjonalnej.
+\item Aplikacja bez problemu obsługuje mechanizm zapisywania oraz wczytywania 
+gry dla każdej z trzech rozpoczętych gier oraz dla każdego trybu gry.
+\item W trakcie działania gry nie zostanie wykonana akcja niezdefiniowana w 
+specyfikacji funkcjonalnej (nagłe zatrzymanie aplikacji lub błędne działanie 
+aplikacji).
 \end{itemize}
 
 \section{Publikacja aplikacji w sklepie Google Play}
-W przypadku opublikowania aplikacji w sklepie Google Play należałoby wykonać następujące kroki:
+W przypadku opublikowania aplikacji w sklepie Google Play należałoby wykonać 
+następujące kroki:
 \begin{enumerate}
-\item Po pierwsze należy uiścić jednorazową opłatę w wysokości \textit{25\$} w celu założenia developerskiego konta Google Play.
-\item Przy tworzeniu aplikacji w Google Play Console (Wszystkie aplikacje $\rightarrow$ Utwórz aplikację) należy podać język domyślny, nazwę aplikacji, krótki opis, pełny opis, kilka zrzutów ekranu z aplikacji, ikonę w wysokiej rozdzielczości (\textit{512x512}), grafikę (\textit{JPEG} lub 24-bitowy \textit{PNG}, \textit{1024x500}). 
-\item Przy przesyłaniu aplikacji jej język domyślny jest ustawiany na angielski, lecz istnieje możliwość dodania przetłumaczonych informacji o aplikacji wraz ze zrzutami ekranu oraz innymi zasobami graficznymi w odpowiednim języku (Konsola Play $\rightarrow$ Wszystkie aplikacje $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Szczegóły aplikacji $\rightarrow$ Zarządzaj tłumaczeniami $\rightarrow$ Kup tłumaczenia lub Dodaj własne tłumaczenie).
-\item Następnym krokiem jest podanie typu oraz kategorii aplikacji (Konsola Play $\rightarrow$ Wszystkie aplikacje $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Kategoryzacja). W przypadku gry mobilnej wybór kategorii może być następujący$\colon$ \textsl{Akcja}, \textsl{Edukacyjne}, \textsl{Fabularne}, \textsl{Hazardowe}, \textsl{Karciane}, \textsl{Łamigówki}, \textsl{Muzyka}, \textsl{Planszowe}, \textsl{Przygodowe}, \textsl{Quizy}, \textsl{Rekreacyjne}, \textsl{Słowne}, \textsl{Sport}, \textsl{Strategie}, \textsl{Symulacyjne}, \textsl{Wyścigi}, \textsl{Zręcznościowe}.
-\item Kolejno należałoby zapewnić pomoc użytkownikom aplikacji. Zespół Google Play nie świadczy pomocy technicznej dotyczącej poszczególnych aplikacji, dlatego w przypadku każdej aplikacji jest wymagane$\colon$
-\begin{enumerate}
-\item Podać działający i dokładny adres e-mail, pod którym użytkownicy będą mogli się kontaktować z właścicielem aplikacji (Konsola Play $\rightarrow$ Wszystkie aplikacje $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Informacje kontaktowe).
-\item W rozsądnym czasie odpowiadać na pytania użytkowników dotyczące płatnych aplikacji i zakupów w aplikacji (w czasie trzech dni, a w przypadku pytań ze strony Google -- w czasie 24 godzin).
+\item Po pierwsze należy uiścić jednorazową opłatę w wysokości \textit{25\$} 
+w celu założenia developerskiego konta Google Play.
+\item Przy tworzeniu aplikacji w Google Play Console (Wszystkie aplikacje $
+\rightarrow$ Utwórz aplikację) należy podać język domyślny, nazwę aplikacji, 
+krótki opis, pełny opis, kilka zrzutów ekranu z aplikacji, ikonę w wysokiej 
+rozdzielczości (\textit{512x512}), grafikę (\textit{JPEG} lub 24-bitowy 
+\textit{PNG}, \textit{1024x500}). 
+\item Przy przesyłaniu aplikacji jej język domyślny jest ustawiany na 
+angielski, lecz istnieje możliwość dodania przetłumaczonych informacji o 
+aplikacji wraz ze zrzutami ekranu oraz innymi zasobami graficznymi w 
+odpowiednim języku (Konsola Play $\rightarrow$ Wszystkie aplikacje $
+\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Szczegóły aplikacji $
+\rightarrow$ Zarządzaj tłumaczeniami $\rightarrow$ Kup tłumaczenia lub Dodaj 
+własne tłumaczenie).
+\item Następnym krokiem jest podanie typu oraz kategorii aplikacji (Konsola 
+Play $\rightarrow$ Wszystkie aplikacje $\rightarrow$ \textit{Wybrana 
+aplikacja} $\rightarrow$ Kategoryzacja). W przypadku gry mobilnej wybór 
+kategorii może być następujący$\colon$ \textsl{Akcja}, \textsl{Edukacyjne}, 
+\textsl{Fabularne}, \textsl{Hazardowe}, \textsl{Karciane}, 
+\textsl{Łamigówki}, \textsl{Muzyka}, \textsl{Planszowe}, \textsl{Przygodowe}, 
+\textsl{Quizy}, \textsl{Rekreacyjne}, \textsl{Słowne}, \textsl{Sport}, 
+\textsl{Strategie}, \textsl{Symulacyjne}, \textsl{Wyścigi}, 
+\textsl{Zręcznościowe}.
+\item Kolejno należałoby zapewnić pomoc użytkownikom aplikacji. Zespół Google 
+Play nie świadczy pomocy technicznej dotyczącej poszczególnych aplikacji, 
+dlatego w przypadku każdej aplikacji jest wymagane$\colon$
+\begin{itemize}
+\item Podać działający i dokładny adres e-mail, pod którym użytkownicy będą 
+mogli się kontaktować z właścicielem aplikacji (Konsola Play $\rightarrow$ 
+Wszystkie aplikacje $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ 
+Informacje kontaktowe).
+\item W rozsądnym czasie odpowiadać na pytania użytkowników dotyczące 
+płatnych aplikacji i zakupów w aplikacji (w czasie trzech dni, a w przypadku 
+pytań ze strony Google -- w czasie 24 godzin).
 \item Oferowanie zwrotów środków.
-\end{enumerate}
-\item Dodanie polityki prywatności na stronie \textit{Informacje o aplikacji} (Konsola Play $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Obecność w sklepie $\rightarrow$ Informacje o aplikacji $\rightarrow$ Polityka prywatności). Polityka prywatności (wraz z innymi objaśnieniami w aplikacji) musi wyraźnie informować o tym, w jaki sposób aplikacja zbiera, wykorzystuje i udostępnia dane użytkownika oraz komu są one udostępniane. W sekcji \textit{Polityka prywatności} należy wpisać URL, pod którym polityka prywatności jest przechowywana online.
+\end{itemize}
+\item Dodanie polityki prywatności na stronie \textit{Informacje o aplikacji} 
+(Konsola Play $\rightarrow$ \textit{Wybrana aplikacja} $\rightarrow$ Obecność 
+w sklepie $\rightarrow$ Informacje o aplikacji $\rightarrow$ Polityka 
+prywatności). Polityka prywatności (wraz z innymi objaśnieniami w aplikacji) 
+musi wyraźnie informować o tym, w jaki sposób aplikacja zbiera, wykorzystuje 
+i udostępnia dane użytkownika oraz komu są one udostępniane. W sekcji 
+\textit{Polityka prywatności} należy wpisać URL, pod którym polityka 
+prywatności jest przechowywana online.
 \item Kolejnymi krokami są$\colon$
-\begin{enumerate}
+\begin{itemize}
 \item Wypełnienie kwestionariusza oceny treści aplikacji.
-\item Publikowanie aplikacji, korzystając z publikowania standardowego lub zaplanowanego. Nowa aplikacja może mieć kilka stanów opublikowania$\colon$ \textsl{Wersja robocza}, \textsl{Gotowa do publikacji}, \textsl{Czeka na publikację}, \textsl{Opublikowana}, \textsl{Odrzucona}, \textsl{Zawieszona}.
-\item Optymalizacja strony z informacjami o aplikacji przy użyciu eksperymentów (przeprowadzanie testów A/B na stronie z informacjami o aplikacji).
-\item [Dodatkowo] Poznanie sprawdzonych metod tworzenia ciekawej strony z informacjami o aplikacji.
-\item [Dodatkowo] Możliwość dowiedzenia się, jak rozpowszechniać aplikację w różnych lokalizacjach oraz programach związanych z Androidem.
-\end{enumerate}
+\item Publikowanie aplikacji, korzystając z publikowania standardowego lub 
+zaplanowanego. Nowa aplikacja może mieć kilka stanów opublikowania$\colon$ 
+\textsl{Wersja robocza}, \textsl{Gotowa do publikacji}, \textsl{Czeka na 
+publikację}, \textsl{Opublikowana}, \textsl{Odrzucona}, \textsl{Zawieszona}.
+\item Optymalizacja strony z informacjami o aplikacji przy użyciu 
+eksperymentów (przeprowadzanie testów A/B na stronie z informacjami o 
+aplikacji).
+\item [Dodatkowo] Poznanie sprawdzonych metod tworzenia ciekawej strony z 
+informacjami o aplikacji.
+\item [Dodatkowo] Możliwość dowiedzenia się, jak rozpowszechniać aplikację w 
+różnych lokalizacjach oraz programach związanych z Androidem.
+\end{itemize}
 \end{enumerate}
 \end{document}
