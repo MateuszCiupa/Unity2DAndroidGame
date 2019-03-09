@@ -1,0 +1,204 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{\textit{All About Survival}}
+\lhead{Specyfikacja funkcjonalna}
+\cfoot{\thepage/\pageref{LastPage}}
+\setlength{\headheight}{15pt}
+
+\author{Mateusz Ciupa 291062}
+\title{Specyfikacja implementacyjna gry mobilnej \\\textit{All About Survival}} 
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Założenia projektowe}
+Gra \textit{All About Survival} jest grą mobilną na urządzenia z systemem
+Android, która powstanie przy użyciu silnika \textit{Unity}, a postacie wraz 
+z otoczeniem oraz animacjami przy użyciu narzędzia \textit{Aseprite}. Logika 
+gry będzie się opierała na mniej lub bardziej złożonych skryptach napisanych 
+w języku \textit{C\#}. Elementy związane z dźwiękiem będą produkowane przy
+użyciu programu \textit{Audacity}.
+
+\section{Architektura}
+Logika gry będzie się opierała o poniższy zestaw klas$\colon$
+
+\begin{enumerate}
+
+\item \texttt{public class Point}
+
+Klasa odwzorowująca punkt na osi poziomej.
+
+Zestaw pól$\colon$
+
+\begin{itemize}
+\item \texttt{public float X}
+\item \texttt{public float Y}
+\end{itemize}
+
+Zestaw metod$\colon$
+\begin{itemize}
+\item \texttt{public float getRange(Point A)}
+
+Metoda zwracająca odległość pomiędzy dwoma punktami.
+\end{itemize}
+
+\item \texttt{public class Vector}
+
+Klasa odwzorowująca wektor na osi poziomej (punkt początkowy oraz 
+przemieszczenie).
+
+Zestaw pól$\colon$
+
+\begin{itemize}
+\item \texttt{public Point A}
+\item \texttt{public float Dislocation}
+\end{itemize}
+
+\item \texttt{public class Character}
+
+Klasa odwzorowująca każdą istotę w grze.
+
+Zestaw pól$\colon$
+
+\begin{itemize}
+\item \texttt{public string Name}
+\item \texttt{public int CurrentHealth}
+\item \texttt{public int MaxHealth}
+\item \texttt{public float MoveSpeed}
+\item \texttt{public float CurrentPosition}
+\end{itemize}
+
+Zestaw klas$\colon$
+
+\begin{itemize}
+\item \texttt{public void MoveRight()}
+
+Metoda wywołująca animację poruszania w prawo.
+
+\item \texttt{public void MoveLeft()}
+
+Metoda wywołująca animację poruszania w lewo.
+
+\item \texttt{public void IdleRight()}
+
+Metoda wywołująca animację postaci w bezczynności skierowaną w prawo.
+
+\item \texttt{public void IdleLeft()}
+
+Metoda wywołująca animację postaci w bezczynności skierowaną w lewo.
+
+\end{itemize}
+
+\item \texttt{public class MainCharacter : Character}
+
+Klasa dziedzicząca po klasie \texttt{Character} odwzorowująca główną postać z
+gry.
+
+Zestaw pól$\colon$
+
+\begin{itemize}
+\item \texttt{public int Coins}
+\item \texttt{public int Wood}
+\item \texttt{public int Weapon}
+\end{itemize}
+
+Zestaw metod$\colon$
+
+\begin{itemize}
+\item \texttt{public void ShootRight()}
+
+Metoda wywołująca animację strzelania z posiadanej broni w prawo oraz 
+wykonująca odpowiednie akcje przy trafieniu w cel.
+
+\item \texttt{public void ShootLeft()}
+
+Metoda wywołująca animację strzelania z posiadanej broni w lewo oraz 
+wykonująca odpowiednie akcje przy trafieniu w cel.
+
+\end{itemize}
+
+\item \texttt{public class Drifter : Character}
+
+Klasa dziedzicząca po klasie \texttt{Character} odwzorowująca wałęsającego
+się człowieka, łucznika oraz robotnika.
+
+Zestaw pól$\colon$
+
+\begin{itemize}
+\item \texttt{public int Role}
+\item \texttt{public bool IsAccessible}
+\end{itemize}
+
+Zestaw metod$\colon$
+
+\begin{itemize}
+\item \texttt{public void ShootRight()}
+
+Metoda wywołująca animację strzelania w prawo oraz wykonująca odpowiednie 
+akcje przy trafieniu w cel.
+
+\item \texttt{public void ShootLeft()}
+
+Metoda wywołująca animację strzelania w lewo oraz wykonująca odpowiednie 
+akcje przy trafieniu w cel.
+
+\item \texttt{public void MoveToCheckpoint()}
+
+Metoda, która anuluje wszystkie aktualne akcje postaci oraz powoduje 
+przemieszczenie postaci do punktu kontrolnego.
+
+\item \texttt{public void Build(Point A)}
+
+Metoda powodująca przemieszczenie postaci do wyznaczonego miejsca oraz 
+wywołanie animacji budowania. 
+
+\end{itemize}
+
+\item \texttt{public class Animal : Character}
+
+Klasa dziedzicząca po klasie \texttt{Character} odwzorowująca zwierzę, będące
+głównym środkiem pozyskiwania monet.
+
+Zestaw metod$\colon$
+
+\begin{itemize}
+\item \texttt{public void RunAway()}
+
+Metoda wywołująca przemieszczenie zwierzęcia z aktualnej pozycji na niewielką 
+odległość. Metoda jest wywoływana w przypadku zbliżenia się głównej postaci 
+na bliską odległość do zwierzęcia.
+
+\end{itemize}
+
+\item \texttt{public class Creature : Character}
+
+Klasa dziedzicząca po klasie \texttt{Character} odwzorowująca nieprzyjazną
+istotę, której głównym zadaniem jest dostanie się do punktu kontrolnego.
+
+Zestaw metod%\colon%
+
+\begin{itemize}
+\item \texttt{public void AttackRight()}
+
+Metoda wywołująca animację atakowania w prawo oraz wykonująca odpowiednie 
+akcje przy trafieniu w cel.
+
+\item \texttt{public void AttackLeft()}
+
+Metoda wywołująca animację atakowania w lewo oraz wykonująca odpowiednie 
+akcje przy trafieniu w cel.
+
+\end{itemize}
+
+\end{enumerate}
+
+\end{document}
